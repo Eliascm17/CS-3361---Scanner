@@ -21,9 +21,10 @@ def getTestCases():
     
     # for some reason '\n' is being appended to each string when added to the newTestCase array
     for i in range(len(testInstances)):
-        for j in range(len(testInstances[i])-1):
-            length = len(testInstances[i][j])
-            testInstances[i][j] = testInstances[i][j][:length-1]
+        for j in range(len(testInstances[i])):
+            if "\n" in testInstances[i][j]:
+                length = len(testInstances[i][j])
+                testInstances[i][j] = testInstances[i][j][:length-1]
 
 
     return testInstances
